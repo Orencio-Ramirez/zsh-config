@@ -37,18 +37,18 @@ export FZF_DEFAULT_OPTS="
 ###########################################################################
 
 fzf-history-widget() {
-
     local selected
 
     selected=$(
-        fc -rl 1 | fzf --tac --no-sort \
-            --prompt="Historial > " \
-            --preview="echo {}"
+        fc -rl 1 \
+        | awk '{$1=""; sub(/^ +/, ""); print}' \
+        | fzf \
+            --tac \
+            --no-sort \
+            --prompt="Historial > "
     )
 
-    if [[ -n "$selected" ]]; then
-        LBUFFER="${selected#*  }"
-    fi
+    [[ -n "$selected" ]] && LBUFFER="$selected"
 }
 
 zle -N fzf-history-widget

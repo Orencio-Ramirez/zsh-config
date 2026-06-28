@@ -97,6 +97,15 @@ install_deps_debian() {
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_DIR/externos/zsh-syntax-highlighting
     fi
 
+    if [ -d "$ZSH_DIR/externos/zsh-history-substring-search" ]; then
+        echo "Actualizando Plugin zsh-history-substring-search"
+        cd $ZSH_DIR/externos/zsh-history-substring-search
+        git fetch && git pull
+    else
+        echo "Descargando zsh-history-substring-search"
+        git clone https://github.com/zsh-users/zsh-history-substring-search.git $ZSH_DIR/externos/zsh-history-substring-search
+    fi
+
     echo "Dependencias instaladas"
 }
 
@@ -149,6 +158,7 @@ source $ZSH_CONFIG/plugins/eza.zsh
 source $ZSH_CONFIG/plugins/completions.zsh
 source $ZSH_CONFIG/plugins/autosuggestions.zsh
 source $ZSH_CONFIG/plugins/syntax-highlighting.zsh
+source $ZSH_CONFIG/plugins/history-substring-search.zsh
 EOF
 
     echo ".zshrc generado"
