@@ -16,40 +16,6 @@ Este proyecto está construido bajo 3 principios:
 
 ---
 
-## ⚙️ Arquitectura
-
-```bash
-~/.zsh/
-
-core/
-options.zsh
-exports.zsh
-colors.zsh
-icons.zsh
-history.zsh
-functions.zsh
-hooks.zsh
-prompt.zsh
-
-modules/
-git.zsh
-docker.zsh
-python.zsh
-ssh.zsh
-root.zsh
-timer.zsh
-hostname.zsh
-
-plugins/
-fzf.zsh
-zoxide.zsh
-direnv.zsh
-eza.zsh
-autosuggestions.zsh
-syntax-highlighting.zsh
-```
----
-
 ## ⚡ Características
 
 ### Prompt
@@ -75,7 +41,7 @@ syntax-highlighting.zsh
 ## 🚀 Instalación
 
 ```bash
-git clone https://github.com/oren/zsh-config.git
+git clone https://github.com/user/zsh-config.git
 cd zsh-config
 ./install.sh
 ```
@@ -87,12 +53,15 @@ cd zsh-config
 Instaladas automáticamente en Debian:
 
 * zsh
+* zsh-autosuggestions
+* zsh-syntax-highlighting
 * git
 * fzf
 * eza
-* zoxide
 * direnv
+* zoxide
 * bat
+* curl
 
 ---
 
@@ -152,7 +121,7 @@ Soporte para temas:
 ```
 󰥔 2026-06-28 22:41:12   ⏱ 1.24s   ✘127   󰌘 SSH
 
-oren ~/projects/homelab   main*  🐍 venv  🐳
+user ~/projects/homelab   main*  🐍 venv  🐳
 ❯
 ```
 
