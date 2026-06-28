@@ -18,7 +18,7 @@ set -e
 # Variables
 ###############################################################################
 
-ZSH_DIR="$ZSH_DIR"
+ZSH_DIR="$$HOME/.zsh"
 ZSHRC="$ZSH_DIRrc"
 BACKUP="$ZSH_DIRrc.backup.$(date +%Y%m%d%H%M%S)"
 
