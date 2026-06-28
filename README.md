@@ -41,8 +41,8 @@ Este proyecto está construido bajo 3 principios:
 ## 🚀 Instalación
 
 ```bash
-git clone https://github.com/user/zsh-config.git
-cd zsh-config
+git clone https://github.com/Orencio-Ramirez/zsh-config.git $HOME/.zsh
+cd $HOME/.zsh
 ./install.sh
 ```
 
@@ -53,8 +53,6 @@ cd zsh-config
 Instaladas automáticamente en Debian:
 
 * zsh
-* zsh-autosuggestions
-* zsh-syntax-highlighting
 * git
 * fzf
 * eza
@@ -62,6 +60,12 @@ Instaladas automáticamente en Debian:
 * zoxide
 * bat
 * curl
+
+Descargadas desde git:
+
+* zsh-syntax-highlight
+* zsh-completions
+* zsh-autosugestions
 
 ---
 

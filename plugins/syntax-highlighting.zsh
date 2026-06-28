@@ -22,29 +22,29 @@ else
     return
 fi
 
-###########################################################################
-# Estilos visuales
-###########################################################################
+# ###########################################################################
+# # Estilos visuales
+# ###########################################################################
 
-# Comando correcto
-ZSH_HIGHLIGHT_STYLES[command]="fg=76"
+# # Comando correcto
+# ZSH_HIGHLIGHT_STYLES[command]="fg=76"
 
-# Comando incorrecto (no existe)
-ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=196,bold"
+# # Comando incorrecto (no existe)
+# ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=196,bold"
 
-# Ruta existente
-ZSH_HIGHLIGHT_STYLES[path]="fg=39"
+# # Ruta existente
+# ZSH_HIGHLIGHT_STYLES[path]="fg=39"
 
-# Strings
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]="fg=220"
+# # Strings
+# ZSH_HIGHLIGHT_STYLES[single-quoted-argument]="fg=220"
 
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=220"
+# ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=220"
 
-###########################################################################
-# Opcional: subrayado en errores (más visible en dark themes)
-###########################################################################
+# ###########################################################################
+# # Opcional: subrayado en errores (más visible en dark themes)
+# ###########################################################################
 
-ZSH_HIGHLIGHT_STYLES[bad-pattern]="fg=196,underline"
+# ZSH_HIGHLIGHT_STYLES[bad-pattern]="fg=196,underline"
 
 ###########################################################################
 # Fin

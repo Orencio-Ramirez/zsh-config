@@ -18,9 +18,9 @@ set -e
 # Variables
 ###############################################################################
 
-ZSH_DIR="$$HOME/.zsh"
-ZSHRC="$ZSH_DIRrc"
-BACKUP="$ZSH_DIRrc.backup.$(date +%Y%m%d%H%M%S)"
+ZSH_DIR="$HOME/.zsh"
+ZSHRC="$HOME/.zshrc"
+BACKUP="$HOME/.zshrc.backup.$(date +%Y%m%d%H%M%S)"
 
 ###############################################################################
 # Detectar sistema
@@ -51,8 +51,6 @@ install_deps_debian() {
 
     sudo apt install -y \
         zsh \
-        zsh-autosuggestions \
-        zsh-syntax-highlighting \
         git \
         fzf \
         eza \
@@ -72,22 +70,31 @@ install_deps_debian() {
 
     echo "Instalando plugins externos"
 
-    if [ -d "$ZSH_DIR/externos/zsh-history-substring-search" ]; then
-        echo "Actualizando Plugin zsh-history-substring-search"
-        cd $ZSH_DIR/externos/zsh-history-substring-search
-        git fetch && git pull
-    else
-        echo "Descargando zsh-history-substring-search"
-        sudo git clone https://github.com/zsh-users/zsh-history-substring-search $ZSH_DIR/externos/zsh-history-substring-search
-    fi
-    
     if [ -d "$ZSH_DIR/externos/zsh-completions" ]; then
         echo "Actualizando Plugin zsh-completions"
         cd $ZSH_DIR/externos/zsh-completions
         git fetch && git pull
     else
         echo "Descargando zsh-completions"
-        sudo git clone https://github.com/zsh-users/zsh-completions $ZSH_DIR/externos/zsh-completions
+        git clone https://github.com/zsh-users/zsh-completions $ZSH_DIR/externos/zsh-completions
+    fi
+
+    if [ -d "$ZSH_DIR/externos/zsh-autosuggestions" ]; then
+        echo "Actualizando Plugin zsh-autosuggestions"
+        cd $ZSH_DIR/externos/zsh-autosuggestions
+        git fetch && git pull
+    else
+        echo "Descargando zsh-autosuggestions"
+        git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_DIR/externos/zsh-autosuggestions
+    fi
+
+    if [ -d "$ZSH_DIR/externos/zsh-syntax-highlighting" ]; then
+        echo "Actualizando Plugin zsh-syntax-highlighting"
+        cd $ZSH_DIR/externos/zsh-syntax-highlighting
+        git fetch && git pull
+    else
+        echo "Descargando zsh-syntax-highlighting"
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_DIR/externos/zsh-syntax-highlighting
     fi
 
     echo "Dependencias instaladas"

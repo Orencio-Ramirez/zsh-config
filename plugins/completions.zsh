@@ -10,12 +10,13 @@
 # Comprobación de existencia
 ###########################################################################
 
-if [[ -f /usr/share/zsh-completions/zsh-completions.zsh ]]; then
-    source /usr/share/zsh-completions/zsh-completions.zsh
+if [[ -f $ZSH_DIR/externos/zsh-completions/zsh-completions.plugin.zsh ]]; then
+    source $ZSH_DIR/externos/zsh-completions/zsh-completions.plugin.zsh
 else
     return
 fi
-
+autoload -Uz compinit
+compinit
 ###########################################################################
 # Fin
 ###########################################################################

@@ -17,13 +17,10 @@
 # Comprobación de existencia
 ###########################################################################
 
-if ! command -v zsh-autosuggestions >/dev/null 2>&1; then
-    # fallback típico en Debian (paquete en /usr/share)
-    if [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-        source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    else
-        return
-    fi
+if [[ -f $ZSH_DIR/externos/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source $ZSH_DIR/externos/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+    return
 fi
 
 ###########################################################################
